@@ -3,7 +3,7 @@
     "Author": "Habitat",
     "Name": "Ripple Shot",
     "InternalName": "RippleShot",
-    "AssemblyVersion": "0.1.1",
+    "AssemblyVersion": "0.1.1.0",
     "TestingAssemblyVersion": null,
     "Description": "Bartender tool for the Ripple Shot /random jackpot game: pricing, per-night caps with Supabase VIPs, carry-over pot, win detection, archives, and a guided payout planner.",
     "Punchline": "Host the Ripple Shot jackpot game from the bar.",
@@ -14,9 +14,9 @@
     "CategoryTags": [ "utility" ],
     "IsHide": false,
     "IsTestingExclusive": false,
-    "DownloadLinkInstall": "https://github.com/<you>/<repo>/releases/latest/download/RippleShot.zip",
-    "DownloadLinkUpdate": "https://github.com/<you>/<repo>/releases/latest/download/RippleShot.zip",
-    "DownloadLinkTesting": "https://github.com/<you>/<repo>/releases/latest/download/RippleShot.zip",
+    "DownloadLinkInstall": "https://github.com/habitatnightclub/ripple-shot/releases/latest/download/RippleShot.zip",
+    "DownloadLinkUpdate": "https://github.com/habitatnightclub/ripple-shot/releases/latest/download/RippleShot.zip",
+    "DownloadLinkTesting": "https://github.com/habitatnightclub/ripple-shot/releases/latest/download/RippleShot.zip",
     "LastUpdate": "0"
   }
 ]
