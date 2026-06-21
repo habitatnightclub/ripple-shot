@@ -8,7 +8,7 @@
     "Description": "Bartender tool for the Ripple Shot /random jackpot game: pricing, per-night caps with Supabase VIPs, a pot that grows as rolls happen, automatic win detection and payout, and a ready-to-paste chat announcement.",
     "Punchline": "Host the Ripple Shot jackpot game from the bar.",
     "RepoUrl": "https://github.com/habitatnightclub/ripple-shot",
-    "IconUrl": "https://raw.githubusercontent.com/habitatnightclub/ripple-shot/main/Data/ripple-shot-icon.png",
+    "IconUrl": "https://raw.githubusercontent.com/habitatnightclub/ripple-shot/main/ripple-shot-icon.png",
     "ApplicableVersion": "any",
     "DalamudApiLevel": 15,
     "Tags": [ "venue", "minigame", "utility" ],
