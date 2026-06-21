@@ -54,7 +54,7 @@ Settings has its own, narrower gates:
 |---|---|---|
 | Shot price | 100,000 gil | Per shot. |
 | Pot contribution | 80% | Fraction of shot price added to the pot, per roll. |
-| Per-night caps | Regular 20 / VIP 30 | Reset at midnigt of the following day. |
+| Per-night caps | Regular 20 / VIP 30 | Reset at a configurable cutoff hour (default 6am). |
 | Pot reset value | 0 gil | What the pot resets to after a win. |
 | Single-trade limit | 1,000,000 gil | Used to plan the payout's trade-chunk breakdown. |
 | Win announcement | on, `/shout` | Template: `{player} ({world}) just won the {amount} Ripple Shot Jackpot with a roll of {roll}! Congratulations!` |
