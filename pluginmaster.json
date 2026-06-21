@@ -3,7 +3,7 @@
     "Author": "Habitat",
     "Name": "Ripple Shot",
     "InternalName": "RippleShot",
-    "AssemblyVersion": "0.3.13.0",
+    "AssemblyVersion": "0.3.14.0",
     "TestingAssemblyVersion": null,
     "Description": "Bartender tool for the Ripple Shot /random jackpot game: pricing, per-night caps with Supabase VIPs, carry-over pot, win detection, archives, and a guided payout planner.",
     "Punchline": "Host the Ripple Shot jackpot game from the bar.",
