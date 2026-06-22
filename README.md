@@ -1,6 +1,6 @@
 # Ripple Shot
 
-A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for running Habitat Nightclub's Ripple Shot: a `/random` jackpot bar game. A bartender buys shots for players, the plugin watches chat for their rolls, detects wins automatically, and prepares (but never sends) the announcement and payout breakdown.
+A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for running Habitat Nightclub's `/random` jackpot game from behind the bar. Players buy shots, the plugin watches chat for their rolls, detects wins automatically, and prepares (but never sends) the announcement and payout breakdown.
 
 ## What it does
 
@@ -11,7 +11,8 @@ A [Dalamud](https://github.com/goatcorp/Dalamud) plugin for running Habitat Nigh
 - **Automatic win detection** — a roll that's a double (`11`–`99`) or a triple (`111`–`999`, all digits identical) wins the whole pot. The pot is claimed and reset the instant a win is detected — no manual confirmation step.
 - **Manual chat announcement, never auto-sent** — the plugin composes a ready-to-paste announcement line for whichever bartender's client resolved the win. A person always presses Enter. If a player wins again before the first announcement is sent, the second one queues independently rather than overwriting the first — nothing gets lost.
 - **Synced dismissal** — in shared mode, once any bartender dismisses (or sends) a win's announcement, the prominent "Jackpot Won" display clears for every connected bartender, not just that one client.
-- **VIP list from Supabase** — VIPs (with higher per-night caps) are resolved automatically against venue's existing VIP table.
+- **Payout planning, not payout automation** — the plugin splits a payout into a sequence of trades at or below the single-trade limit (default 1,000,000 gil) and shows the breakdown. It does not execute or auto-sequence trades — automating gil trades is exactly the behaviour Square Enix's automation detection targets, so each trade is one manual click in-game.
+- **VIP list from Supabase** — VIPs (with higher per-night caps) are resolved automatically against your venue's existing VIP table.
 - **Per-night archive** — every shot, roll, and payout is recorded. Locally as JSON in solo mode, or shared via Supabase so every bartender can browse every past night, not just ones run from their own computer.
 - **Habitat-themed UI** — ported color palette, panel styling, and the Habitat logo in the header.
 
@@ -54,7 +55,8 @@ Settings has its own, narrower gates:
 |---|---|---|
 | Shot price | 100,000 gil | Per shot. |
 | Pot contribution | 80% | Fraction of shot price added to the pot, per roll. |
-| Per-night caps | Regular 20 / VIP 30 | Reset at a configurable cutoff hour (default 6am). |
+| Per-night caps | Regular 20 / VIP 30 | Resets at the configurable day-rollover hour (default 6am local), not literal midnight. |
+| Day rollover hour | 6am | The local hour before which it's still "yesterday" for caps/archive purposes - keeps a night that runs past midnight from resetting mid-party. |
 | Pot reset value | 0 gil | What the pot resets to after a win. |
 | Single-trade limit | 1,000,000 gil | Used to plan the payout's trade-chunk breakdown. |
 | Win announcement | on, `/shout` | Template: `{player} ({world}) just won the {amount} Ripple Shot Jackpot with a roll of {roll}! Congratulations!` |
@@ -105,4 +107,5 @@ FFXIV's `/random` wording can vary. Before going live on a new data centre or cl
 (?:Random!\s*)?(?<name>.+?)\s+rolls?\s+a\s+(?<value>\d+)(?:[.!]?\s*\((?:out of|max)\s*(?<value_max>\d+)\))?
 ```
 
-Player matching is on `Name @ HomeWorld`. Same-world rolls often carry no world in chat, so the plugin falls back to matching on a unique name; cross-world visitors are matched on name + world.# Ripple Shot
+Player matching is on `Name @ HomeWorld`. Same-world rolls often carry no world in chat, so the plugin falls back to matching on a unique name; cross-world visitors are matched on name + world.
+
